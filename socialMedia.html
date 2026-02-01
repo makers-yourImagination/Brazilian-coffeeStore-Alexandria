@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazilian Coffee Stores — Social Media</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #f5e6d3, #f9f5f0);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Floating social media icons */
+    .icon {
+        position: absolute;
+        font-size: 2.5rem;
+        color: rgba(139, 94, 60, 0.15);
+        animation: floatIcons 10s infinite linear;
+        z-index: 0;
+    }
+
+    @keyframes floatIcons {
+        0% { transform: translateY(110vh) rotate(0deg); opacity: 0.3; }
+        50% { opacity: 0.6; }
+        100% { transform: translateY(-10vh) rotate(360deg); opacity: 0.3; }
+    }
+
+    header {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top-logo { 
+        width: 150px;
+        height: auto;
+        animation: fadeInDown 1s ease-in-out; 
+    }
+
+    .tagline {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        background: linear-gradient(90deg, #8b5e3c, #d4a373);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 10px;
+    }
+
+    /* Buttons */
+    .button-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+        z-index: 1;
+        margin-top: 10px;
+    }
+
+    .btn {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: #5a3e2b;
+        font-weight: 600;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .btn i {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-5px) scale(1.03);
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover i { transform: scale(1.15); }
+
+    /* Home Button */
+    .home-btn {
+        background: #8b5e3c;
+        color: white;
+        padding: 12px 28px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 40px;
+        z-index: 1;
+    }
+
+    .home-btn:hover {
+        background: #a46c46;
+        transform: scale(1.05);
+    }
+
+    footer {
+        margin-top: 25px;
+        text-align: center;
+        color: #7a5b47;
+        font-size: 0.9rem;
+        z-index: 1;
+    }
+
+    footer a {
+        color: #8b5e3c;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    footer a:hover {
+        color: #a46c46;
+        text-decoration: underline;
+    }
+
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 600px) {
+        .button-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .btn {
+            height: 90px;
+            font-size: 0.95rem;
+        }
+
+        .top-logo {
+            width: 120px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- Floating icons -->
+<span class="icon" style="left:10%; animation-delay: 0s;"><i class="fab fa-facebook"></i></span>
+<span class="icon" style="left:30%; animation-delay: 2s;"><i class="fab fa-instagram"></i></span>
+<span class="icon" style="left:50%; animation-delay: 4s;"><i class="fab fa-facebook"></i></span>
+<span class="icon" style="left:70%; animation-delay: 1s;"><i class="fab fa-instagram"></i></span>
+<span class="icon" style="left:90%; animation-delay: 3s;"><i class="fab fa-facebook"></i></span>
+
+<header>
+    <img src="./images/logo.png" alt="Brazilian Coffee Stores Logo" class="top-logo">
+    <h2 class="tagline">Follow Us Online</h2>
+</header>
+
+<div class="button-grid">
+    <a href="https://www.instagram.com/bcs.1929?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn">
+        <i class="fab fa-instagram"></i>
+        Instagram
+    </a>
+    <a href="https://www.facebook.com/share/17D9QosMq8/" target="_blank" class="btn">
+        <i class="fab fa-facebook"></i>
+        Facebook
+    </a>
+</div>
+
+<!-- Home Button -->
+<a href="index.html" class="home-btn">
+    <i class="fas fa-home"></i> Home
+</a>
+
+<footer>
+    © Brazilian Coffee Stores — All Rights Reserved
+</footer>
+
+</body>
+</html>
+

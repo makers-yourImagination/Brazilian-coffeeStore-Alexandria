@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TapTaste Menu Selection</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #f5e6d3, #f9f5f0);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Floating coffee beans */
+    .bean {
+        position: absolute;
+        font-size: 2rem;
+        color: rgba(120, 72, 42, 0.2);
+        animation: floatBeans 10s infinite linear;
+        z-index: 0;
+    }
+
+    @keyframes floatBeans {
+        0% { transform: translateY(110vh) rotate(0deg); }
+        100% { transform: translateY(-10vh) rotate(360deg); }
+    }
+
+    header {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top-logo {
+        width: 150px;
+        height: auto;
+        animation: fadeInDown 1s ease-in-out;
+    }
+
+    .tagline {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        background: linear-gradient(90deg, #8b5e3c, #d4a373);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 10px;
+    }
+
+    .button-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+        z-index: 1;
+        margin-top: 10px;
+    }
+
+    .btn {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: #5a3e2b;
+        font-weight: 600;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .btn i {
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-5px) scale(1.03);
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover i { transform: scale(1.15); }
+
+    /* Home Button */
+    .home-btn {
+        background: #8b5e3c;
+        color: white;
+        padding: 12px 28px;
+        border-radius: 25px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 40px;
+        z-index: 1;
+    }
+
+    .home-btn:hover {
+        background: #a46c46;
+        transform: scale(1.05);
+    }
+
+    footer {
+        margin-top: 25px;
+        text-align: center;
+        color: #7a5b47;
+        font-size: 0.9rem;
+        z-index: 1;
+    }
+
+    footer a {
+        color: #8b5e3c;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    footer a:hover {
+        color: #a46c46;
+        text-decoration: underline;
+    }
+
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 600px) {
+        .button-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .btn {
+            height: 90px;
+            font-size: 0.95rem;
+        }
+
+        .home-btn {
+            margin-top: 30px;
+        }
+
+        .top-logo {
+            width: 120px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- Floating coffee beans -->
+<span class="bean" style="left:5%; animation-delay: 0s;">☕</span>
+<span class="bean" style="left:25%; animation-delay: 2s;">🍪</span>
+<span class="bean" style="left:50%; animation-delay: 4s;">☕</span>
+<span class="bean" style="left:75%; animation-delay: 1s;">🍩</span>
+
+<header>
+    <img src="./images/logo.png" alt="TapTaste Logo" class="top-logo">
+    <h2 class="tagline">Choose Your Menu</h2>
+</header>
+
+<div class="button-grid">
+    <a href="https://drive.google.com/file/d/11ewGNTAd9xx4ZQM3GpG6MNjVteafs0r8/view?usp=sharing" target="_blank" class="btn">
+        <i class="fas fa-mug-hot"></i>
+        Menu Arabic
+    </a>
+    <a href="https://drive.google.com/file/d/1I64PSf9Of_p1bnZT97Kzs8JOsZxBhKs5/view?usp=sharing" target="_blank" class="btn">
+        <i class="fas fa-coffee"></i>
+        Menu English
+    </a>
+</div>
+
+<!-- Home Button -->
+<a href="index.html" class="home-btn">
+    <i class="fas fa-home"></i> Home
+</a>
+
+<footer>
+    <p>
+        Powered by <a href="https://www.instagram.com/tap._.taste?igsh=MTNqMGtlbnY1ZDVmOA%3D%3D&utm_source=qr" target="_blank">TapTaste</a> ☕  
+        | All rights reserved to <strong>Brazilian Coffee</strong> ©
+    </p>
+</footer>
+
+</body>
+</html>

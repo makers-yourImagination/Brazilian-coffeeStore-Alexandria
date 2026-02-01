@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Branches - TapTaste</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #f5e6d3, #f9f5f0);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Floating coffee beans */
+    .bean {
+        position: absolute;
+        font-size: 2rem;
+        color: rgba(120, 72, 42, 0.2);
+        animation: floatBeans 10s infinite linear;
+        z-index: 0;
+    }
+
+    @keyframes floatBeans {
+        0% { transform: translateY(110vh) rotate(0deg); }
+        100% { transform: translateY(-10vh) rotate(360deg); }
+    }
+
+    /* Top Logo */
+    .top-logo {
+        max-width: 160px;
+        animation: fadeInDown 1s ease-in-out;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    header {
+        text-align: center;
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tagline {
+        font-size: 1.3rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        background: linear-gradient(90deg, #8b5e3c, #d4a373);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .button-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 30px;
+        z-index: 1;
+    }
+
+    @media (min-width: 600px) {
+        .button-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .btn {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(12px);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: #5a3e2b;
+        font-weight: 600;
+        padding: 18px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        text-align: center;
+        cursor: pointer;
+        font-size: 1rem;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+    }
+
+    .btn i {
+        display: block;
+        font-size: 1.6rem;
+        margin-bottom: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-5px) scale(1.03);
+        background: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover i { transform: scale(1.12); }
+
+    /* Home button */
+    .home-btn {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.3);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: #5a3e2b;
+        font-size: 1.5rem;
+        text-decoration: none;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .home-btn:hover {
+        transform: scale(1.1);
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    footer {
+        font-size: 0.9rem;
+        color: #7a5b47;
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1;
+    }
+
+    footer a {
+        color: #8b5e3c;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    footer a:hover {
+        color: #a46c46;
+        text-decoration: underline;
+    }
+
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 992px) {
+        .top-logo { max-width: 200px; }
+        .tagline { font-size: 1.6rem; }
+        .btn { font-size: 1.1rem; padding: 22px; }
+        .button-grid { gap: 25px; max-width: 700px; }
+    }
+</style>
+</head>
+<body>
+
+<!-- Floating coffee beans -->
+<span class="bean" style="left:10%; animation-delay: 0s;">☕</span>
+<span class="bean" style="left:30%; animation-delay: 2s;">🍪</span>
+<span class="bean" style="left:60%; animation-delay: 4s;">☕</span>
+<span class="bean" style="left:80%; animation-delay: 1s;">🍩</span>
+
+<!-- Logo at the very top -->
+<img src="./images/logo.png" alt="TapTaste Logo" class="top-logo">
+
+<header>
+    <h2 class="tagline">Our Branches</h2>
+</header>
+
+<div class="button-grid">
+    <a href="https://share.google/xClh9fSzjFv4BhbjJ" target="_blank" class="btn">
+        <i class="fas fa-location-dot"></i>
+        Salah Salem
+    </a>
+
+    <a href="https://share.google/xCrrTaP5ca6lPfdop" target="_blank" class="btn">
+        <i class="fas fa-location-dot"></i>
+        Bibliotheque Alexandria
+    </a>
+
+    <a href="https://share.google/ctON9DQHOgiULg7Iz" target="_blank" class="btn">
+        <i class="fas fa-location-dot"></i>
+        Gleem
+    </a>
+
+    <a href="https://share.google/1WIGX1BXcRS8ArTvf" target="_blank" class="btn">
+        <i class="fas fa-location-dot"></i>
+        Sharm El Sheikh 1
+    </a>
+
+    <a href="https://share.google/o1qXcbK4HgN61Tpml" target="_blank" class="btn">
+        <i class="fas fa-location-dot"></i>
+        Sharm El Sheikh 2
+    </a>
+</div>
+
+<!-- Home Button -->
+<a href="./index.html" class="home-btn">
+    <i class="fas fa-home"></i>
+</a>
+
+<footer>
+    <p>
+        Powered by <a href="https://www.instagram.com/tap._.taste?igsh=MTNqMGtlbnY1ZDVmOA%3D%3D&utm_source=qr" target="_blank">TapTaste</a> ☕  
+        | All rights reserved to <strong>Brazilian Coffee</strong> ©
+    </p>
+</footer>
+
+</body>
+</html>
